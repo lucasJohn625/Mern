@@ -20,7 +20,7 @@ const Child = (props) =>{
                 <button onClick={() => setStateAge(stateAge + 1)}>
                     Birthday Button for {firstName} {lastName}
                 </button>
-            </div>
+             </div>
         );
 }
 
