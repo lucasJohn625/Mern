@@ -38,6 +38,9 @@ const Form = (props) => {
             onChange={ (e) => setFirstName(e.target.value) }
           />
         </div>
+        {firstName.length < 2 && firstName.length > 0 ? (
+            <p>First Name must be at least 2 characters</p>
+          ) : null}
         <div style={inputDataDivStyle}>
           <label htmlFor="lastName">Last Name</label>
           <input 
@@ -46,6 +49,9 @@ const Form = (props) => {
             onChange={ (e) => setLastName(e.target.value) }
           />
         </div>
+        {lastName.length < 2 && lastName.length > 0 ? (
+            <p>Last Name must be at least 2 characters</p>
+          ) : null}
         <div style={inputDataDivStyle}>
           <label htmlFor="email">Email</label>
           <input 
@@ -54,6 +60,7 @@ const Form = (props) => {
             onChange={ (e) => setEmail(e.target.value) }
           />
         </div>
+        {email.length < 5 ? <p>Email must be at least 5 characters</p> : null}
         <div style={inputDataDivStyle}>
           <label htmlFor="password">Password</label>
           <input 
@@ -62,6 +69,9 @@ const Form = (props) => {
             onChange={ (e) => setPassword(e.target.value) }
           />
         </div>
+        {password.length < 8 ? (
+            <p>Password must be at least 8 characters</p>
+          ) : null}
         <div style={inputDataDivStyle}>
           <label htmlFor="confirmPassord">Confirm Password</label>
           <input 
@@ -70,6 +80,7 @@ const Form = (props) => {
             onChange={ (e) => setConfirmPassword(e.target.value) }
           />
         </div>
+        {confirmPassword !== password ? <p>Passwords must match</p> : null}
       </form>
 
       <div style={ formDataDivStyle }>
@@ -92,7 +103,6 @@ const Form = (props) => {
       </div>
     </div>
   )
-
 }
 
 export default Form;
