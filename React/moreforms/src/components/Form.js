@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-// We will use an onChange synthetic event to capture into state 
+ // We will use an onChange synthetic event to capture into state 
 //    each character as it is typed
 
 const Form = (props) => {

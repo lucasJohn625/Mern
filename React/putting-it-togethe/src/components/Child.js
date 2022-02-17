@@ -3,9 +3,9 @@ import React, {useState} from "react";
 
 
 const Child = (props) =>{
-    const { firstName, lastName, Age, hairColor} = props;
+    const { firstName, lastName, age, hairColor} = props;
 
-    const [stateAge, setStateAge] = useState(Age);
+    const [stateAge, setStateAge] = useState(age);
     
 
         return(
@@ -16,7 +16,7 @@ const Child = (props) =>{
                 
                 <p>Age: {stateAge}</p>
                 <p>Hair Color: {hairColor}</p>
-            
+                
                 <button onClick={() => setStateAge(stateAge + 1)}>
                     Birthday Button for {firstName} {lastName}
                 </button>

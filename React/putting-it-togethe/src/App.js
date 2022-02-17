@@ -4,53 +4,58 @@ import Child from './components/Child'
 
 function App() {
 
-  const coolObject = [
+const coolClub = [
       {
           firstName: "Jane",
           lastName: "Doe",
-          Age: 45,
+          age: 45,
           hairColor: "Black",
           
       },
       {
         firstName: "John",
         lastName: "Smith",
-        Age: 99,
+        age: 99,
         hairColor: "Brown",
         
       },
   ];
-  //const [first, second] = coolObject;
+  return(
   
-  return  (
-  
+      <div className="App">
+          {coolClub.map((member, index)=>{
+            return (
+              <Child
+                key={index}
+                firstName={member.firstName}
+                lastName={member.lastName}
+                age={member.age}
+                hairColor={member.hairColor}
+              />
+            );
 
-    <div className="App">
-      {
-      coolObject.map((member, index)=>{
-        return(
-          <Child 
-            key={index}
-            firstName={member.firstName}
-            lastName={member.lastName}
-            Age={member.Age}
-            hairColor={member.hairColor}
-                    
-          />
-        )
-      })
-    }
+        
+         })}
+
+       
     </div>
-    
-        /*decondstructing
-    <div className="App">
-      <Child coolObject={first} />
-      <Child coolObject={second}/>
-
-      */
-      
-   
-  );
+  )
+ 
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+  
+
+   
+ 
+
