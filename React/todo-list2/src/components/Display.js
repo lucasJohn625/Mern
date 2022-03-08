@@ -11,6 +11,7 @@ const Display = (props) => {
 
         todo.markedDelete = !todo.markedDelete;
         setTodoList([...todoList])
+        ///look for bonus to complete
 
     }
     const styled=(markedDelete)=>{
