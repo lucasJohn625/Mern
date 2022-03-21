@@ -1,5 +1,6 @@
 const Joke = require("../models/jokes.model");
 
+
 const getAllJokes = (req, res) => {
   Joke.find()
     .then((allJokes) => res.json(allJokes))
