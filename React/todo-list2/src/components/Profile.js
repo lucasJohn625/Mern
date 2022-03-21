@@ -4,17 +4,17 @@ const Profile = (props) => {
     
     
     const {name, setName} = props;
-    const [title, setTitle] = useState("");
+    // const [title, setTitle] = useState("");
     const [hasBeenSubmitted, setHasBeenSubmitted] = useState(false);
 
-    const createName =(e) =>{
+    const createName = (e) =>{
         e.preventDefault();
     
         setName([...name,{
-            title: title,
+           
         }])
 
-        const newUser = { name};
+        const newUser = { name };
         console.log("welcome", newUser);
 
         setName("");
@@ -35,7 +35,8 @@ const Profile = (props) => {
                     <h3>pleae add a name of the list</h3> 
                 
                     <label>Name: </label> 
-                    <input type="text" onChange={ (e) => setName(e.target.value) } />
+                    <input type="text" onChange={ (e) => setName(e.target.value) }
+                    value={name}/>
                     <button>Submit</button>
         </div>
 
