@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 
+ 
+
 const Display = (props) => {
     const {todoList, setTodoList} = props;
+
+    const {name, setName}=props;
     
     const deleteButton = (idFromBelow) => {
         setTodoList(todoList.filter((todo, index)=> todo.id !== idFromBelow));      
@@ -23,11 +27,14 @@ const Display = (props) => {
         }
     }
 
+
     return (
-        <div>
+        <div> 
+            
             {
                 todoList.map((todo, index)=>(
                     <div key={index}>
+                       
                         <p className={styled(todo.markedDelete)}>{todo.todoText}</p>
                         <input onClick={()=> handleCompleted(todo)}type="checkbox" />
                         <button onClick={()=> deleteButton(todo.id)}>Delete</button>
