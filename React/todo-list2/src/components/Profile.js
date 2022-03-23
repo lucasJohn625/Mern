@@ -10,14 +10,6 @@ const Profile = (props) => {
     const createName = (e) =>{
         e.preventDefault();
     
-        setName([...name,{
-           
-        }])
-
-        const newUser = { name };
-        console.log("welcome", newUser);
-
-        setName("");
     
         setHasBeenSubmitted( true );
         };

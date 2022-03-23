@@ -1,14 +1,20 @@
 import "./App.css";
-import CreateProduct from "./components/CreateProduct";
 
+import Main from './view/Main';
+import DisplayOne from "./components/DisplayOne";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
     return (
-        <div className="App">
-            {/* For now, we only have our single Create component.
-                The "/" path is our root. When we run npm start, this will be what displays at localhost:3000 */}
-            <CreateProduct path="/" />
-        </div>
+        <BrowserRouter>
+            <div className="App">
+            <Routes>
+                <Route path="/" element={<Main/>}/>
+
+                <Route path="/products/:id" element={<DisplayOne/>}/>
+            </Routes>
+            </div>
+        </BrowserRouter>
     );
 }
 

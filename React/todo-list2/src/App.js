@@ -7,7 +7,7 @@ import Profile from "./components/Profile";
 function App() {
 
   const [todoList, setTodoList] = useState([]);
-  const [name, setName] = useState([]);
+  const [name, setName] = useState("");
 
   return (
     <div className="App">

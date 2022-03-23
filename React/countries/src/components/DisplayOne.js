@@ -13,8 +13,7 @@ const DisplayOne = (props)=> {
         .then((res)=>{
             console.log(res);
             console.log(res.data);
-            console.log(res.data[0]);
-            setCountry(res.data[0]);
+            setCountry(res.data);
         })
         .catch((err)=>console.log(err))
     }, [])
@@ -23,9 +22,8 @@ const DisplayOne = (props)=> {
     return(
         <div>
             {
-                country.name?
-                <p>{country.name}</p>
-                :null
+                country.name
+               
             }
             
         </div>
