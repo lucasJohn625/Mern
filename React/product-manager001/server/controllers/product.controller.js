@@ -13,10 +13,33 @@ module.exports = {
             .catch((err) => console.log(err));
     },
     getAllProducts: (req, res) => {
-        Product.find({}) //remember, these methods (find, findOne, create, etc) are all specific mongoose methods you can see a complete list in their docs
+        Product.find({}) 
             .then((allProducts) => res.json(allProducts))
             .catch((err) => console.log(err));
     },
 
+    updateProduct : (req, res) => {
+        Product.findOneAndUpdate({_id: req.params.id}, 
+            req.body, 
+            {new:true, runValidators: true}
+            )
+            .then((updatedProduct) => {
+                console.log(updatedProduct);
+                res.json(updatedProduct);
+            })
+            .catch(err => res.json(err))
+    },
+    deleteProduct : (req, res) => {
+        Product.deleteOne({_id: req.params.id} )
+            .then((deletedProduct) => {
+                console.log(deletedProduct);
+                res.json(deletedProduct);
+            })
+            .catch((err)=>console.log(err))
+        }
+    
+
+
 };
 
+ 
