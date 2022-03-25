@@ -91,7 +91,7 @@ const UpdateProduct = (props) => {
                     </div>
     
                     <br />
-                    <input class="submit-input" type="submit" value="Update" />
+                    <input className="submit-input" type="submit" value="Update" />
                 </form>
             </div>
         );
