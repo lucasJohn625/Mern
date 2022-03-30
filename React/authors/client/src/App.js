@@ -1,23 +1,25 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './components/Home';
-import OneAuthor from './components/OneAuthor';
-import AddAuthor from './components/AddAuthor';
-
+import logo from "./logo.svg";
+import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import DisplayAll from "./components/DisplayAll";
+import AuthorForm from "./components/AuthorForm";
+import EditAuthor from "./components/EditAuthor";
+import Review from "./components/Review";
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="App">
+    <div className="App">
+      <h1>Favorite Authors</h1>
+      <BrowserRouter>
         <Routes>
-
-            <Route path="/" element={<Home/>}/>
-            <Route path= "/author/:id" element={<OneAuthor/>}/>
-            <Route path= '/author' element={<AddAuthor/>} />
+          <Route path="/" element={<DisplayAll />} />
+          <Route path="/new" element={<AuthorForm />} />
+          <Route path="/edit/:id" element={<EditAuthor />} />
+          <Route path="/review" element={<Review />}/>
         </Routes>
-        
-      </div>
-    </BrowserRouter>
+      </BrowserRouter>
+    </div>
   );
 }
+
 export default App;

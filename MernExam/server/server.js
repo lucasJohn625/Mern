@@ -12,7 +12,7 @@ app.use(cors({
 
 require("./config/mongoose.config");
 
-require("./routes/author.routes")(app);
+require("./routes/movie.routes")(app);
 
 
 app.listen(8000, ()=>{
