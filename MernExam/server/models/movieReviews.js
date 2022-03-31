@@ -1,7 +1,8 @@
 const { Schema, model } = require('mongoose')
 
 const MovieReviewSchema = new Schema({
-//used this schema to create an object to push into reviews array and call api seperatly 
+    
+
 
     movieTitle:{
         type: String,

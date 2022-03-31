@@ -8,19 +8,19 @@ function ReadReviews() {
     const [reviews,setReviews] = useState([]);
     const [movieName,setMovieName] = useState("")
     let {id} = useParams();
-//just getting id of movies to get their reviews 
+
 
     useEffect(()=>{
         axios.get(`http://localhost:8000/api/movies/${id}`).then((results)=>{
             setReviews(results.data.movie.reviews);
             console.log(results.data.movie.reviews)
         }).catch(err=>console.error(err))
-    },[]); /// calling to collect the specific movie and setting the reviews id 
+    },[]); 
 
   
 
     console.log(reviews[0])
-// // Function is triggered when the Delete button is clicked.
+
     const deleteHandler = ()=>{
   
         axios.delete(`http://localhost:8000/api/movies/${id}`)
@@ -51,7 +51,7 @@ function ReadReviews() {
             <h2 className="header2">New Review for {movieName}</h2>
            <table style={{ margin: "auto", border: "1px solid black" }}>
                 <thead style={{ backgroundColor: "lightgray", color: "white" }}>
-                    {/* Inside thead we define the column names in the "table header" */}
+                    
                     <tr>
                         <th>Name</th>
                         <th>Rating</th>

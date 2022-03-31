@@ -2,9 +2,7 @@ const mongoose = require("mongoose");
 
 const dbName = "movies";
 
-mongoose.connect(`mongodb+srv://millerlucas625:Luke764228@cluster0.32hpm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
-
-`, {
+mongoose.connect(`mongodb://localhost/${dbName}`, {
         useNewUrlParser: true,
         useUnifiedTopology: true
 })

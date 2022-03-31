@@ -71,7 +71,7 @@ module.exports.deleteMovie = (req, res) => {
                     res.json({ message: 'Something went wrong', error: err })
                 });}
          
-        module.exports.createNewReview = async (req, res) => { // async and await is used for  keeping the function asynchronous which make await variable wait unitil it gets a value
+        module.exports.createNewReview = (req, res) => { // async and await is used for  keeping the function asynchronous which make await variable wait unitil it gets a value
          
 
             Movie.findById(req.body.movieId).then(movie=>{ // Finding the movie with the movieId sent
